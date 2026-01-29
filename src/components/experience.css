@@ -1,0 +1,142 @@
+.experiences {
+  display: block;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border-bottom: 3px solid #ebad0f;
+  background-color: #ffffff;
+}
+
+.btn-exp {
+  background: #e7870a;
+  background-color: linear-gradient(
+    to bottom,
+    #f7b45a 0%,
+    #e79a35 45%,
+    #d67f1f 100%
+  );
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  /* white-space: nowrap; */
+  padding: 8px 16px;
+  border: none;
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.45),
+    0 0 15px rgba(225, 138, 34, 0.6);
+  overflow: hidden;
+  outline: 3px solid #e7870a;
+  outline-offset: 3px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 140%;
+  font-style: bold;
+  margin: 20px 600px 35px 600px;
+  white-space: nowrap;
+}
+
+.btn-exp::after {
+  position: absolute;
+  inset: 7px;
+  border-radius: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn-exp::before {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(225, 138, 34, 0.6)
+  );
+  border-radius: 35px;
+}
+
+.btn-exp:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+.btn-exp:focus,
+.btn-exp:active {
+  outline: 3px solid #e7870a;
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.45),
+    0 0 15px #e7870a;
+}
+
+.exp-info {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.exp-1,
+.exp-2,
+.exp-3 {
+  display: flex;
+  gap: 60px;
+  margin-left: 400px;
+  margin-right: 330px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 30px;
+  border: 3px solid orange;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background: rgba(255, 255, 255, 0.12); /* nền trong */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 3px solid rgba(255, 165, 0, 0.6);
+  background-color: aliceblue; /* viền cam trong */
+}
+
+.exp-1:hover,
+.exp-2:hover,
+.exp-3:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+  box-shadow:
+    0 0 15px rgba(255, 165, 0, 0.6),
+    0 0 40px rgba(255, 165, 0, 0.3),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.exp-info img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.exp-1-info,
+.exp-2-info,
+.exp-3-info {
+  display: block;
+  gap: 5px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  color: rgb(58, 58, 247);
+}
+
+.deceive-line {
+  height: 4px;
+  background: orange;
+  width: 100%; /* ăn theo company-name */
+  margin: 10px 0 12px;
+}

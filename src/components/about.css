@@ -1,0 +1,96 @@
+.about {
+  background-color: #ffffff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-bottom: 3px solid #ebad0f;
+}
+
+.btn-about {
+  position: relative;
+  background: #e7870a;
+  background-color: linear-gradient(
+    to bottom,
+    #f7b45a 0%,
+    #e79a35 45%,
+    #d67f1f 100%
+  );
+  color: white;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 35px 600px 35px 600px;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border: none;
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.45),
+    0 0 15px rgba(225, 138, 34, 0.6);
+  overflow: hidden;
+  outline: 3px solid #e7870a;
+  outline-offset: 3px;
+}
+
+.btn-about::after {
+  position: absolute;
+  inset: 7px;
+  border-radius: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn-about::before {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(225, 138, 34, 0.6)
+  );
+  border-radius: 35px;
+}
+
+.btn-about:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+.btn-about:focus,
+.btn-about:active {
+  outline: 3px solid #e7870a;
+  box-shadow:
+    inset 0 4px 8px rgba(255, 255, 255, 0.45),
+    0 0 15px #e7870a;
+}
+
+.btn-about p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200%;
+  font-style: bold;
+  margin: 0 450px 48px 450px;
+}
+
+.about-info {
+  display: flex;
+  gap: 48px;
+  margin: 0 32px;
+}
+
+.about p,
+.list-job {
+  color: #d67f1f;
+  font-size: 120%;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.about-image {
+  width: 380px;
+  height: 380px;
+}

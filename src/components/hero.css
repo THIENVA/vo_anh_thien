@@ -1,0 +1,92 @@
+.hero {
+  width: 100%;
+  display: flex;
+  gap: 48px;
+  /* margin-top: 40px;
+  margin-bottom: 96px; */
+  padding: 40px 0;
+  border-bottom: 3px solid #ebad0f;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  background-color: #ffffff;
+}
+
+.hero-info {
+  display: block;
+  align-items: center;
+  margin-left: 32px;
+  align-items: flex-start;
+  text-align: left;
+  color: #e7870a;
+}
+
+.hero-intro-1 {
+  font-size: x-large;
+  font-family: "Times New Roman", Times, serif;
+  font-style: bold;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.hero-intro-2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 100%;
+  font-style: italic;
+}
+
+.hero-intro-3 {
+  display: block;
+  margin-top: 22px;
+  padding-left: 0;
+}
+
+.hero-intro-3 p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: small;
+  font-style: italic;
+}
+
+.hero-intro-3-1,
+.hero-intro-3-2 {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-intro-4 {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.hero-intro-4 img {
+  width: 36px;
+  height: 36px;
+  align-items: center;
+}
+
+.hero-intro-4 img:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+  box-shadow:
+    0 0 15px rgba(255, 165, 0, 0.6),
+    0 0 40px rgba(255, 165, 0, 0.3),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image {
+  position: relative;
+  margin-right: 32px;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
