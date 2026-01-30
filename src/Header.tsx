@@ -1,6 +1,13 @@
 function Header() {
   return (
-    <header className="@apply w-full bg-[wheat] sticky top-0 z-50 rounded-3xl max-w-7xl my-0  m-auto  py-0  px-8  h-16 flex justify-between items-center border-b-[3px] border-[#ebad0f]">
+    <header
+      className="
+    bg-[wheat] sticky top-0 z-50 
+    rounded-3xl max-w-7xl 
+    my-0  m-auto  py-0  px-8  h-16 
+    flex justify-between items-center 
+    border-b-[3px] border-[#ebad0f]"
+    >
       <div className="@apply flex items-center gap-10 mr-8">
         {/* LOGO */}
         <a href="/" className="@apply text-3xl font-bold text-[#e7870a] ml-8">
