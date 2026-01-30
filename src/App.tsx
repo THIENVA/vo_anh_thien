@@ -1,11 +1,12 @@
 import "./App.css";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skill from "./components/Skill";
-import Experiences from "./components/Experience";
-import Projects from "./components/Project";
-import Contact from "./components/Contact";
+import About from "./About";
+import "./App.css";
+import Contact from "./Contact";
+import Project from "./Project";
+import Experience from "./Experience";
+import Header from "./Header";
+import Hero from "./Hero";
+import Skill from "./Skill";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <Hero />
       <About />
       <Skill />
-      <Experiences />
-      <Projects />
+      <Experience />
+      <Project />
       <Contact />
     </div>
   );
