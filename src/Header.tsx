@@ -1,14 +1,7 @@
 function Header() {
   return (
-    <header
-      className="
-    bg-[wheat] sticky top-0 z-50 
-    rounded-3xl max-w-7xl 
-    my-0  m-auto  py-0  px-8  h-16 
-    flex justify-between items-center 
-    border-b-[3px] border-[#ebad0f]"
-    >
-      <div className="@apply flex items-center gap-10 mr-8">
+    <header className="block rounded-3xl bg-[wheat] border-b-[3px] border-[#ebad0f] mt-5 mb-5 pt-5 pb-5">
+      <div className="flex items-center gap-10 justify-between px-10">
         {/* LOGO */}
         <a href="/" className="@apply text-3xl font-bold text-[#e7870a] ml-8">
           VÕ ANH THIỆN
@@ -49,14 +42,14 @@ function Header() {
             <div className="w-0 h-6 bg-[#e7870a]"></div>
           </nav>
           {/* ACTIONS */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mr-8">
             {/* THEME BUTTON*/}
             <button className="text-xl cursor-pointer p-2 rounded-lg hover:bg-[#000] ">
               ☀️
             </button>
 
             {/*DOWNLOAD CV*/}
-            <button className="bg-[#e7870a] text-[#ffffff] py-2  px-4  rounded-xl font-medium cursor-pointer hover:bg-[#374151] mr-8">
+            <button className="bg-[#e7870a] text-[#ffffff] py-2  px-4  rounded-xl font-medium cursor-pointer hover:bg-[#374151]">
               Download CV
             </button>
           </div>

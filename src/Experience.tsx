@@ -10,7 +10,7 @@ bg-gradient-to-b from-[#f7b45a] via-[#e79a35] to-[#d67f1f]
 text-white font-bold
 rounded-3xl
 cursor-pointer
-mt-5 mr-[500px] ml-[500px]
+mt-5 mb-5 ml-[650px]
 whitespace-nowrap
 pt-5 pb-5
 py-2 px-4

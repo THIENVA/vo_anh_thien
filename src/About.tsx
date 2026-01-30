@@ -10,7 +10,7 @@ bg-gradient-to-b from-[#f7b45a] via-[#e79a35] to-[#d67f1f]
 text-white font-bold
 rounded-3xl
 cursor-pointer
-mt-5 mr-[500px] mb-5 ml-[500px]
+mt-5 mb-5 ml-[650px]
 whitespace-nowrap
 pt-5 pb-5
 py-2 px-4
@@ -29,14 +29,15 @@ active:outline
 active:outline-2
 active:outline-[#e7870a]
 focus:shadow-[inset_0_4px_8px_rgba(255,255,255,0.45),0_0_15px_#e7870a]
-active:shadow-[inset_0_4px_8px_rgba(255,255,255,0.45),0_0_15px_#e7870a]"
+active:shadow-[inset_0_4px_8px_rgba(255,255,255,0.45),0_0_15px_#e7870a]
+border-[3px] border-[#ebad0f]"
           id="#about"
         >
           ABOUT ME
         </button>
-        <div className="flex gap-12 my-0  mx-8">
+        <div className="flex gap-10 my-0  mx-8">
           <img src={aboutImage} alt="about-image" className="w-70 h-70" />
-          <div className="text-[#d67f1f] text-[120%] leading-relaxed font-normal not-italic text-left">
+          <div className="text-[#d67f1f] text-[110%] leading-relaxed font-normal not-italic text-center">
             <p className="mt-5">
               I'm a passionate, self-proclaimed developer who specializes in
               full stack development (React.js & Node.js). I am very
