@@ -6,7 +6,7 @@ function About() {
   return (
     <Block>
       <Button title="ABOUT ME" onClick={() => console.log("clicked")} />
-      <div className="flex gap-10">
+      <div className="flex gap-5">
         <img src={aboutImage} alt="about-image" className="w-55 h-50" />
         <div className="text-[#d67f1f] text-[110%] leading-relaxed font-normal not-italic text-center">
           <p className="mt-5">
