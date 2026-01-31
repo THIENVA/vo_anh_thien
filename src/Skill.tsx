@@ -31,7 +31,7 @@ function Skill() {
             onClick={() => console.log("clicked")}
             className="mb-10"
           />
-          <div className="grid grid-cols-2 gap-10 text-center ml-[200px]">
+          <div className="grid grid-cols-2 gap-10 text-center mr-[400px]">
             <SkillItem icon={ubuntu} title="Ubuntu" />
             <SkillItem icon={aws} title="AWS" />
             <SkillItem icon={docker} title="Docker" />
