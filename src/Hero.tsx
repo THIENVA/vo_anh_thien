@@ -14,7 +14,7 @@ function Hero() {
   return (
     <Block>
       <div className="flex mr-8 ml-8">
-        <div className="block items-start justify-center items-center text-[#e7870a]">
+        <div className="flex flex-col text-[#e7870a]">
           <h1 className="text-[x-large] font-bold mb-6">
             Good day! I'm VO ANH THIEN!
           </h1>
