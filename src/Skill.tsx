@@ -7,11 +7,11 @@ function Skill() {
   return (
     <Block>
       <Button title="TECHNICALL SKILL" onClick={() => console.log("clicked")} />
-      <p className="text-[140%] leading-none italic  mt-5 mb-9  ml-[60px] text-[#000]">
+      <p className="text-[140%] leading-none italic mx-auto block text-[#000]">
         The skills, tools and technologies I am adapted:
       </p>
       <div className="flex justify-between m-full">
-        <div className="flex-1 flex flex-col items-center">
+        <div className="block gap-7">
           <Button
             title="Web Development"
             onClick={() => console.log("clicked")}
@@ -25,7 +25,7 @@ function Skill() {
           </div>
         </div>
         <div className="h-[400px] w-[3px] bg-[#e18a22] mx-[30px] gap-5"></div>
-        <div className="block gap-10">
+        <div className="block gap-7">
           <Button
             title="Web Deploy"
             onClick={() => console.log("clicked")}
