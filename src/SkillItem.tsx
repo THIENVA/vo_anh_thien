@@ -9,7 +9,7 @@ function SkillItem({ icon, title }: SkillItemProps) {
       <img
         src={icon}
         alt={title}
-        className="w-[80px] h-[80px] object-contain bg-white p-2 rounded-xl"
+        className="w-[24px] h-[24px] object-contain p-2 rounded-xl"
       />
       <h3 className="mt-3 text-xl font-bold text-[#000]">{title}</h3>
     </div>
