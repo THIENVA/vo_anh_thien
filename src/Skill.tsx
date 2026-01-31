@@ -7,7 +7,7 @@ function Skill() {
   return (
     <Block>
       <Button title="TECHNICALL SKILL" onClick={() => console.log("clicked")} />
-      <p className="text-[140%] leading-none italic ml[450px] mt-[10px] mb-[10px] text-[#000]">
+      <p className="text-[140%] leading-none italic text-center mt-[10px] mb-[10px] text-[#000]">
         The skills, tools and technologies I am adapted:
       </p>
       <div className="flex justify-between m-full">
