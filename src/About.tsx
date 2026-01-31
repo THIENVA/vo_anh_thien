@@ -7,7 +7,7 @@ function About() {
     <Block>
       <Button title="ABOUT ME" onClick={() => console.log("clicked")} />
       <div className="flex gap-10">
-        <img src={aboutImage} alt="about-image" className="w-75 h-65" />
+        <img src={aboutImage} alt="about-image" className="w-55 h-50" />
         <div className="text-[#d67f1f] text-[110%] leading-relaxed font-normal not-italic text-center">
           <p className="mt-5">
             I'm a passionate, self-proclaimed developer who specializes in full
