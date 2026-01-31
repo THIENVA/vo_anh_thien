@@ -35,7 +35,7 @@ function Hero() {
               path={heroIntro32}
               title={"2. Available for new projects"}
             />
-            <div className="flex gap-4 items-center ">
+            <div className="flex gap-5 items-center ">
               <HeroIcon path={heroIntro41} />
               <HeroIcon path={heroIntro42} />
               <HeroIcon path={heroIntro43} />

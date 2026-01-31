@@ -15,7 +15,7 @@ text-white font-bold
 rounded-3xl
 cursor-pointer
 whitespace-nowrap
-mt-[15px]
+mx-auto block
 pt-5 pb-5
 py-2 px-4
 overflow-hidden
@@ -34,6 +34,7 @@ active:outline-2
 active:outline-[#e7870a]
 focus:shadow-[inset_0_4px_8px_rgba(255,255,255,0.45),0_0_15px_#e7870a]
 active:shadow-[inset_0_4px_8px_rgba(255,255,255,0.45),0_0_15px_#e7870a]
+border-[3px] border-[#ebad0f]
 ${className || ""}
       `}
     >
