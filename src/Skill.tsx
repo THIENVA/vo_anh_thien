@@ -10,7 +10,7 @@ function Skill() {
       <p className="text-[140%] leading-none italic text-center mt-[10px] mb-[10px] text-[#000]">
         The skills, tools and technologies I am adapted:
       </p>
-      <div className="flex justify-between m-full">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">
         <div className="block gap-7">
           <Button
             title="Web Development"
