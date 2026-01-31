@@ -11,7 +11,7 @@ import Block from "./Block";
 function Hero() {
   return (
     <Block>
-      <div className="block items-start ml-8 pt-5 text-left text-[#e7870a]">
+      <div className="flex items-start justify-center items-center text-[#e7870a]">
         <h1 className="text-[x-large] font-bold mb-6">
           Good day! I'm VO ANH THIEN!
         </h1>
