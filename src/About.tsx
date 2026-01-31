@@ -6,9 +6,9 @@ function About() {
   return (
     <Block>
       <Button title="ABOUT ME" onClick={() => console.log("clicked")} />
-      <div className="flex gap-5">
+      <div className="grid grid-cols-[220px_1fr] gap-10 items-start">
         <img src={aboutImage} alt="about-image" className="w-55 h-50" />
-        <div className="text-[#d67f1f] text-[110%] leading-relaxed font-normal not-italic text-center">
+        <div className="text-[#d67f1f] text-[110%] leading-relaxed">
           <p className="mt-5">
             I'm a passionate, self-proclaimed developer who specializes in full
             stack development (React.js & Node.js). I am very enthusiastic about
