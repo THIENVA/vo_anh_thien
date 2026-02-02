@@ -20,7 +20,6 @@ function ExpBlock({ path, time, place, job }: ExpBlockProps) {
             border-[3px] border-[#ebad0f]"
     >
       <img src={path} />
-      <div className="w-1 h-20 bg-orange-500"></div>
       <ExpInfo time={time} place={place} job={job} />
     </div>
   );
