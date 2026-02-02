@@ -1,6 +1,6 @@
 import "./App.css";
 import About from "./About";
-import "./App.css";
+
 import Contact from "./Contact";
 import Project from "./Project";
 import Experience from "./Experience";
