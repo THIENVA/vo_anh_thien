@@ -16,6 +16,7 @@ function Header() {
             <NavLink icon={"#skill"} title={"Skill"} />
             <NavLink icon={"#exp"} title={"Experience"} />
             <NavLink icon={"#project"} title={"Projects"} />
+            <NavLink icon={"#blog"} title={"Blog"} />
             <NavLink icon={"#contact"} title={"Contact"} />
           </nav>
           <div className="w-[3px] h-6 bg-[#e7870a] ml-[15px]"></div>
