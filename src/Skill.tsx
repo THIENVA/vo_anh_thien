@@ -6,7 +6,7 @@ function Skill() {
   return (
     <Block>
       <Button title={dataSkill.title} onClick={() => console.log("clicked")} />
-      <p className="text-[140%] leading-none italic mt-5 mb-9 text-[#c7771a] ml-60">
+      <p className="text-[140%] leading-none italic mt-5 mb-9 text-[#c7771a] ml-100">
         {dataSkill.description}
       </p>
       <div className="relative flex items-start justify-center w-full mt-10">
