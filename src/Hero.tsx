@@ -1,52 +1,39 @@
-import {
-  heroIntro31,
-  heroIntro32,
-  heroIntro41,
-  heroIntro42,
-  heroIntro43,
-  heroImage,
-} from "./assets";
 import Block from "./Block";
-import HeroInfo from "./heroInfo";
-import HeroIcon from "./heroIcon";
+import dataHero from "./data/hero.json";
 
 function Hero() {
   return (
     <Block>
       <div className="flex mr-8 ml-8">
         <div className="flex flex-col text-[#e7870a]">
-          <h1 className="text-[x-large] font-bold mb-6">
-            Good day! I'm VO ANH THIEN!
-          </h1>
+          <h1 className="text-[x-large] font-bold mb-6">{dataHero.title}</h1>
           <p className="text-[100%] leading-none italic">
-            A developer with a passion for visualizing and logical thinking. I
-            value personal space and cooperation and motivate colleagues toward
-            our goal. My goal is to deeply understand developing and deploying
-            websites.
+            {dataHero.description}
           </p>
           <div className="block mt-6 pl-0 gap-[10_px]">
-            <HeroInfo
-              path={heroIntro31}
-              title={
-                "162/42A Phan Dang Luu str, Duc Nhuan dist, Ho Chi Minh city"
-              }
-            />
-            <HeroInfo
-              path={heroIntro32}
-              title={"2. Available for new projects"}
-            />
-            <div className="flex gap-5 items-center ">
-              <HeroIcon path={heroIntro41} />
-              <HeroIcon path={heroIntro42} />
-              <HeroIcon path={heroIntro43} />
-            </div>
+            {dataHero.info.map((item) => (
+              <div key={item.id} className="flex items-center gap-3">
+                <img src={item.icon} className="w-6 h-6" />
+                <span>{item.text}</span>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="relative pt-5 w-72 h-72 rounded-3xl hover:transition-all duration-300 ease-in-out">
+        <div className="flex gap-4 mt-6 w-auto h-10 items-center">
+          {dataHero.social.map((item) => (
+            <a key={item.id} href={item.link}>
+              <img
+                src={item.icon}
+                className="h-10 w-auto hover:scale-110 transition flex"
+              />
+            </a>
+          ))}
+        </div>
+        <div className="relative mr-8 pt-5 w-72 h-72 rounded-3xl hover:transition-all duration-300 ease-in-out">
           <img
-            src={heroImage}
+            src={dataHero.avatar}
             alt="hero-image"
-            className="w-50 h-55 rounded-3xl"
+            className="w-full h-full object-cover rounded-3xl"
           />
         </div>
       </div>

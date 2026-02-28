@@ -1,0 +1,34 @@
+{
+  "title": "Good day! I'm VO ANH THIEN!",
+  "description": "A developer with a passion for visualizing and logical thinking. I value personal space and cooperation and motivate colleagues toward our goal. My goal is to deeply understand developing and deploying websites.",
+  "info": [
+    {
+      "id": 1,
+      "icon": "/img/her0-intro-3.1.svg",
+      "text": "162/42A Phan Dang Luu str, Duc Nhuan dist, Ho Chi Minh city"
+    },
+    {
+      "id": 2,
+      "icon": "/img/her0-intro-3.2.svg",
+      "text": "2. Available for new projects"
+    }
+  ],
+  "social": [
+    {
+      "id": 3,
+      "icon": "/img/her0-intro-4.1.svg",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "icon": "/img/her0-intro-4.2.svg",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "icon": "/img/her0-intro-4.3.svg",
+      "link": "#"
+    }
+  ],
+  "avatar": "./img/hero-image.jpg"
+}
