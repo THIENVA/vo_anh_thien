@@ -18,17 +18,18 @@ function Hero() {
               </div>
             ))}
           </div>
+          <div className="flex gap-4 mt-6 w-auto h-10 items-center">
+            {dataHero.social.map((item) => (
+              <a key={item.id} href={item.link}>
+                <img
+                  src={item.icon}
+                  className="h-10 w-auto hover:scale-110 transition flex"
+                />
+              </a>
+            ))}
+          </div>
         </div>
-        <div className="flex gap-4 mt-6 w-auto h-10 items-center">
-          {dataHero.social.map((item) => (
-            <a key={item.id} href={item.link}>
-              <img
-                src={item.icon}
-                className="h-10 w-auto hover:scale-110 transition flex"
-              />
-            </a>
-          ))}
-        </div>
+
         <div className="relative mr-8 pt-5 w-72 h-72 rounded-3xl hover:transition-all duration-300 ease-in-out">
           <img
             src={dataHero.avatar}
