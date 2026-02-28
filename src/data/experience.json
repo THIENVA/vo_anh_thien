@@ -1,0 +1,26 @@
+{
+  "title": "WORK EXPERIENCE",
+  "experiences": [
+    {
+      "type": "top",
+      "logo": "/img/logo-pnj-vector-inkythuatso-2-01-17-14-52-42 1.png",
+      "year": "2016 - 2019",
+      "company": "PHU NHUAN JEWELRY FACTORY",
+      "position": "Data & information employee - Office Administrator"
+    },
+    {
+      "type": "side",
+      "logo": "/img/Logo-NTT-SV 1.png",
+      "year": "2021",
+      "company": "NTT",
+      "position": "IT Heldesk support L1 (remote and onsite)."
+    },
+    {
+      "type": "second",
+      "logo": "/img/Logo-01 1.png",
+      "year": "2022",
+      "company": "VINATECH",
+      "position": "IT Heldesk support L1 (remote and onsite)."
+    }
+  ]
+}

@@ -2,11 +2,15 @@ import { ntt, pnj, vinatech } from "./assets";
 import Block from "./Block";
 import Button from "./Button";
 import ExpBlock from "./ExpBlock";
+import dataExperience from "./data/experience.json";
 
 function Experience() {
   return (
     <Block>
-      <Button title="WORK EXPERIENCE" onClick={() => console.log("clicked")} />
+      <Button
+        title={dataExperience.title}
+        onClick={() => console.log("clicked")}
+      />
       <div className="block justify-center items-center mt-5 mb-5">
         <ExpBlock
           path={pnj}
