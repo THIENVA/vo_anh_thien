@@ -1,0 +1,15 @@
+{
+  "logo": "VÕ ANH THIỆN",
+  "menu": [
+    { "id": 1, "title": "About", "link": "#about" },
+    { "id": 2, "title": "Skill", "link": "#skill" },
+    { "id": 3, "title": "Experience", "link": "#exp" },
+    { "id": 4, "title": "Projects", "link": "#project" },
+    { "id": 5, "title": "Blog", "link": "#blog" },
+    { "id": 6, "title": "Contact", "link": "#contact" }
+  ],
+  "download": {
+    "text": "Download CV",
+    "link": ""
+  }
+}
