@@ -1,0 +1,44 @@
+{
+  "title": "TECHNICAL SKILL",
+  "description": "The skills, tools and technologies I am adapted",
+  "categories": [
+    {
+      "name": "Web Development",
+      "items": [
+        {
+          "icon": "/img/html-icon.svg",
+          "title": "HTML"
+        },
+        {
+          "icon": "/img/CSS-icon.svg",
+          "title": "CSS"
+        },
+        {
+          "icon": "/img/JS-icon.svg",
+          "title": "Javascript"
+        },
+        {
+          "icon": "/img/react.svg",
+          "title": "react"
+        }
+      ]
+    },
+    {
+      "name": "Web Deploy",
+      "items": [
+        {
+          "icon": "/img/ubuntu-icon.svg",
+          "title": "ubuntu"
+        },
+        {
+          "icon": "/img/aws-icon.svg",
+          "title": "aws"
+        },
+        {
+          "icon": "/img/docker-icon.svg",
+          "title": "docker"
+        }
+      ]
+    }
+  ]
+}

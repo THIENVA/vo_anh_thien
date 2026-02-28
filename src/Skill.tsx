@@ -1,40 +1,48 @@
-import { aws, css, docker, html, js, react, ubuntu } from "./assets";
 import Block from "./Block";
-import SkillItem from "./SkillItem";
 import Button from "./Button";
+import dataSkill from "./data/skill.json";
 
 function Skill() {
   return (
     <Block>
-      <Button title="TECHNICALL SKILL" onClick={() => console.log("clicked")} />
-      <p className="text-[140%] leading-none italic text-center mt-[10px] mb-[10px] text-[#000]">
-        The skills, tools and technologies I am adapted:
+      <Button title={dataSkill.title} onClick={() => console.log("clicked")} />
+      <p className="text-[140%] leading-none italic  mt-5 mb-9  ml-[60px] text-[#c7771a]">
+        {dataSkill.description}
       </p>
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">
-        <div className="block gap-7">
+      <div className="relative flex items-start justify-center w-full mt-10">
+        <div className="flex-1 flex flex-col items-center">
           <Button
-            title="Web Development"
+            title={dataSkill.categories[0].name}
             onClick={() => console.log("clicked")}
-            className="mb-10"
+            className="mb-12"
           />
-          <div className="grid grid-cols-2 gap-5 text-center ml-[100px]">
-            <SkillItem icon={html} title="HTML" />
-            <SkillItem icon={css} title="CSS" />
-            <SkillItem icon={js} title="Javascript" />
-            <SkillItem icon={react} title="react" />
+          <div className="grid grid-cols-2 gap-12 text-center">
+            {dataSkill.categories[0].items.map((item, i) => (
+              <div key={i} className="flex flex-col items-center gap-3">
+                <img src={item.icon} alt={item.title} className="h-16 w-auto" />
+                <p className="font-semi-bold">{item.title}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="h-[400px] w-[3px] bg-[#e18a22] mx-[30px] gap-5"></div>
-        <div className="block gap-7">
+
+        {/* Vertical Line */}
+        <div className="h-[400px] w-[3px] bg-[#e18a22] mx-[30px] gap-5" />
+
+        {/* Category Right */}
+        <div className="flex-1 flex flex-col items-center">
           <Button
-            title="Web Deploy"
-            onClick={() => console.log("clicked")}
-            className="mb-10"
+            title={dataSkill.categories[0].name}
+            onClick={() => {}}
+            className="mb-12"
           />
-          <div className="grid grid-cols-2 gap-5 text-center mr-[100px]">
-            <SkillItem icon={ubuntu} title="Ubuntu" />
-            <SkillItem icon={aws} title="AWS" />
-            <SkillItem icon={docker} title="Docker" />
+          <div className="grid grid-cols-2 gap-12 text-center">
+            {dataSkill.categories[1].items.map((item, i) => (
+              <div key={i} className="flex flex-col items-center gap-3">
+                <img src={item.icon} alt={item.title} className="h-16 w-auto" />
+                <p className="font-semi-bold"> {item.title} </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
