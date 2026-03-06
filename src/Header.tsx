@@ -1,8 +1,14 @@
+import { useLocation } from "react-router-dom";
 import Block from "./Block";
 import NavLink from "./navLink";
 import headerData from "./data/header.json";
 
 function Header() {
+  const location = useLocation();
+  const hiddenRoutes = ["/dashboard", "signin", "/blog/editor"];
+  if (hiddenRoutes.some((route) => location.pathname.startsWith(route))) {
+    return null;
+  }
   return (
     <Block>
       <div className="flex items-center gap-10 justify-between px-10">

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Tôi đã tách dữ liệu Portfolio sang JSON như thế nào",
+    "slug": "tach-du-lieu-portfolio-sang-json",
+    "category": "Technical",
+    "date": "2026-03-01",
+    "excerpt": "Tách dữ liệu sang JSON giúp portfolio linh hoạt hơn, dễ mở rộng và dễ bảo trì.",
+    "coverImage": "/img/blog-json.png",
+    "content": [
+      "Khi bắt đầu xây dựng portfolio, tôi để toàn bộ dữ liệu trực tiếp trong component. Điều này khiến file trở nên dài và khó kiểm soát.",
+      "Sau đó tôi quyết định tách toàn bộ dữ liệu như project, contact, skill sang các file JSON riêng biệt.",
+      "Lợi ích đầu tiên là component trở nên gọn gàng hơn. Tôi chỉ cần map dữ liệu và render.",
+      "Thứ hai, việc thêm project mới chỉ cần sửa JSON mà không phải đụng vào logic.",
+      "Cuối cùng, cấu trúc này giúp tôi tiến gần hơn tới cách tổ chức của một ứng dụng thực tế."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Giải quyết khoảng trắng do body margin trong Tailwind v4",
+    "slug": "fix-body-margin-tailwind-v4",
+    "category": "Learning Notes",
+    "date": "2026-03-02",
+    "excerpt": "Một lỗi nhỏ nhưng gây khó chịu: khoảng trắng phía trên layout do margin mặc định của trình duyệt.",
+    "coverImage": "/img/blog-tailwind.png",
+    "content": [
+      "Trong quá trình hoàn thiện giao diện, tôi phát hiện một khoảng trắng nhỏ phía trên header.",
+      "Ban đầu tôi nghĩ do component có margin-top, nhưng thực tế không phải.",
+      "Sau khi inspect DevTools, tôi nhận ra body của trình duyệt có margin mặc định.",
+      "Giải pháp rất đơn giản: reset margin và padding của html và body trong index.css.",
+      "Qua lỗi nhỏ này, tôi học được rằng không nên bỏ qua những chi tiết cơ bản của CSS."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Tại sao tôi chọn React thay vì thuần HTML/CSS",
+    "slug": "tai-sao-chon-react",
+    "category": "Dev Journey",
+    "date": "2026-03-03",
+    "excerpt": "React giúp tôi xây dựng giao diện theo hướng component và dễ mở rộng hơn so với cách viết truyền thống.",
+    "coverImage": "/img/blog-react.png",
+    "content": [
+      "Trước đây tôi từng xây dựng website bằng HTML, CSS và JavaScript thuần.",
+      "Tuy nhiên khi dự án lớn dần, việc quản lý code trở nên khó khăn.",
+      "React cho phép tôi chia giao diện thành các component nhỏ, tái sử dụng được.",
+      "Kết hợp với React Router, tôi có thể dễ dàng tạo nhiều trang mà không cần reload.",
+      "Việc sử dụng state và props giúp ứng dụng có tính tương tác cao hơn rất nhiều."
+    ]
+  }
+]
