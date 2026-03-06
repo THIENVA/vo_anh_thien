@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "@clerk/clerk-react";
 import About from "./About";
+import "./App.css";
 import Contact from "./Contact";
 import Project from "./Project";
 import Experience from "./Experience";
@@ -10,9 +10,10 @@ import Hero from "./Hero";
 import Skill from "./Skill";
 
 import BlogList from "./pages/Blog/BlogList";
-import BlogDetail from "./pages/Blog/BlogDetail";
-import SignIn from "./pages/SignIn";
+import BlogDetails from "./pages/Blog/BlogDetail";
+import SignInPage from "./pages/SignInPage";
 import BlogEditor from "./pages/BlogEditor";
+import Dashboard from "./pages/Dashboard";
 
 function Home() {
   return (
@@ -27,6 +28,20 @@ function Home() {
   );
 }
 
+function ProtectedRoute({ children }: { children: React.ReactNode }) {
+  const { isSignedIn, isLoaded } = useAuth();
+
+  if (!isLoaded)
+    return (
+      <div className="min-h-screen bg-[#0f172a] flex items-center justify-center text-white">
+        Loading...
+      </div>
+    );
+  if (!isSignedIn) return <Navigate to="/signin" />;
+
+  return <>{children}</>;
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -35,8 +50,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/editor" element={<BlogEditor />} />
-        <Route path="/blog/:slug" element={<BlogDetail />} />
-        <Route path="/blog/signin" element={<SignIn />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signin/sso-callback" element={<SignInPage />} />
+        <Route path="/signin/factor-one" element={<SignInPage />} />
+        <Route path="/signin/factor-two" element={<SignInPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
