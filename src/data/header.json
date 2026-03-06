@@ -11,5 +11,6 @@
   "download": {
     "text": "Download CV",
     "link": ""
-  }
+  },
+  "blogRoute": "/blog"
 }
