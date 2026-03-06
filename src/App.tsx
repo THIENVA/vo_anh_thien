@@ -48,9 +48,31 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/editor" element={<BlogEditor />} />
-        <Route path="/blog/:slug" element={<BlogDetails />} />
+        <Route
+          path="/blog"
+          element={
+            <ProtectedRoute>
+              <BlogList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blog/:slug"
+          element={
+            <ProtectedRoute>
+              <BlogDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blog/editor"
+          element={
+            <ProtectedRoute>
+              <BlogEditor />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signin/sso-callback" element={<SignInPage />} />
         <Route path="/signin/factor-one" element={<SignInPage />} />
