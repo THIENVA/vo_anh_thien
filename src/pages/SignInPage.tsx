@@ -10,7 +10,7 @@ function SignInPage() {
             Đăng nhập
           </h1>
           <div className="flex justify-center">
-            <SignIn routing="path" path="/signin" afterSignInUrl="/blog" />
+            <SignIn routing="path" path="/signin" afterSignInUrl="/dashboard" />
           </div>
         </Block>
       </div>
