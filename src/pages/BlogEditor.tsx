@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../lib/supabase";
 
 function BlogEditor() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     title: "",
     excerpt: "",
@@ -16,15 +18,41 @@ function BlogEditor() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("New post:", {
-      ...form,
-      slug: form.title.toLowerCase().replace(/\s+/g, "-"),
+  const handleSubmit = async () => {
+    if (!form.title || !form.content) {
+      alert("Vui lòng nhập tiêu đề và nội dung!");
+      return;
+    }
+
+    setLoading(true);
+
+    const newPost = {
+      title: form.title,
+      excerpt: form.excerpt,
+      category: form.category,
+      slug: form.title
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9-]/g, ""),
       date: new Date().toISOString().split("T")[0],
       author: "Võ Anh Thiện",
-    });
-    alert("Đã lưu bài viết (mock)!");
-    navigate("/blog");
+      content: form.content.split("\n").filter((p) => p.trim() !== ""),
+      cover_image: "",
+    };
+
+    const { error } = await supabase.from("posts").insert([newPost]);
+
+    setLoading(false);
+
+    if (error) {
+      alert("Lỗi khi đăng bài: " + error.message);
+      console.error(error);
+    } else {
+      alert("Đăng bài thành công!");
+      navigate("/blog");
+    }
   };
 
   return (
@@ -66,7 +94,10 @@ function BlogEditor() {
         </div>
 
         <div>
-          <label className="text-sm text-gray-400 mb-1 block">Nội dung</label>
+          <label className="text-sm text-gray-400 mb-1 block">
+            Nội dung{" "}
+            <span className="text-gray-500">(mỗi đoạn văn xuống dòng)</span>
+          </label>
           <textarea
             name="content"
             value={form.content}
@@ -80,12 +111,13 @@ function BlogEditor() {
         <div className="flex gap-4">
           <button
             onClick={handleSubmit}
-            className="bg-[#e7870a] text-white py-3 px-8 rounded-xl font-semibold hover:bg-[#374151] transition-colors"
+            disabled={loading}
+            className="bg-[#e7870a] text-white py-3 px-8 rounded-xl font-semibold hover:bg-[#374151] transition-colors disabled:opacity-50"
           >
-            Đăng bài
+            {loading ? "Đang đăng..." : "Đăng bài"}
           </button>
           <button
-            onClick={() => navigate("/blog")}
+            onClick={() => navigate("/dashboard")}
             className="bg-[#1e293b] text-gray-400 py-3 px-8 rounded-xl font-semibold hover:bg-[#374151] transition-colors"
           >
             Hủy
