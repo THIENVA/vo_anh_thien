@@ -49,7 +49,7 @@ function BlogList() {
   });
 
   return (
-    <div className="min-h-screen bg-[#fff] dark:bg-gray-900 px-6 py-16">
+    <div className="min-h-screen bg-[#fff] dark:bg-[#0f172a] px-6 py-16">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         <Block>
           <h1 className="text-4xl font-bold text-[#e7870a] mb-2">Blog</h1>
