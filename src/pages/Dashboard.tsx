@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useClerk, useUser } from "@clerk/clerk-react";
-import postsData from "../data/posts.json";
+import { supabase } from "../lib/supabase";
 import Block from "../Block";
 
 type Post = {
@@ -11,31 +11,37 @@ type Post = {
   category: string;
   date: string;
   excerpt: string;
-  coverImage: string;
+  cover_image: string;
   content: string[];
 };
-
-const stats = [
-  { label: "Tổng bài viết", value: postsData.length, icon: "📝" },
-  { label: "Lượt xem", value: "1,204", icon: "👁️" },
-  {
-    label: "Categories",
-    value: [...new Set(postsData.map((p) => p.category))].length,
-    icon: "🏷️",
-  },
-  { label: "Tháng này", value: 2, icon: "📅" },
-];
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const { signOut } = useClerk();
   const { user } = useUser();
-  const [postList, setPostList] = useState<Post[]>(postsData as Post[]);
+  const [postList, setPostList] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"posts" | "profile">("posts");
 
-  const handleDelete = (id: number) => {
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data, error } = await supabase
+        .from("posts")
+        .select("*")
+        .order("date", { ascending: false });
+
+      if (error) console.error(error);
+      else setPostList(data || []);
+      setLoading(false);
+    };
+    fetchPosts();
+  }, []);
+
+  const handleDelete = async (id: number) => {
     if (confirm("Bạn chắc chắn muốn xóa bài này?")) {
-      setPostList(postList.filter((p) => p.id !== id));
+      const { error } = await supabase.from("posts").delete().eq("id", id);
+      if (error) alert("Lỗi xóa bài: " + error.message);
+      else setPostList(postList.filter((p) => p.id !== id));
     }
   };
 
@@ -43,6 +49,23 @@ export default function Dashboard() {
     signOut();
     navigate("/");
   };
+
+  const stats = [
+    { label: "Tổng bài viết", value: postList.length, icon: "📝" },
+    { label: "Lượt xem", value: "1,204", icon: "👁️" },
+    {
+      label: "Categories",
+      value: [...new Set(postList.map((p) => p.category))].length,
+      icon: "🏷️",
+    },
+    {
+      label: "Tháng này",
+      value: postList.filter((p) =>
+        p.date?.startsWith(new Date().toISOString().slice(0, 7)),
+      ).length,
+      icon: "📅",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[#fff] px-6 py-10">
@@ -129,14 +152,16 @@ export default function Dashboard() {
                 </Link>
               </div>
 
-              <div className="flex flex-col gap-3">
-                {postList.length === 0 ? (
-                  <div className="text-center py-16 text-gray-400">
-                    <p className="text-4xl mb-3">📭</p>
-                    <p>Chưa có bài viết nào.</p>
-                  </div>
-                ) : (
-                  postList.map((post) => (
+              {loading ? (
+                <p className="text-gray-400 text-center py-8">Đang tải...</p>
+              ) : postList.length === 0 ? (
+                <div className="text-center py-16 text-gray-400">
+                  <p className="text-4xl mb-3">📭</p>
+                  <p>Chưa có bài viết nào.</p>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-3">
+                  {postList.map((post) => (
                     <div
                       key={post.id}
                       className="border border-[#ebad0f]/30 rounded-2xl p-5 flex items-start justify-between gap-4 hover:border-[#e7870a] transition-all"
@@ -159,12 +184,6 @@ export default function Dashboard() {
                         >
                           Xem
                         </Link>
-                        <Link
-                          to="/blog/editor"
-                          className="text-xs text-[#e7870a] bg-[#e7870a]/10 hover:bg-[#e7870a]/20 px-3 py-1.5 rounded-lg transition-all"
-                        >
-                          Sửa
-                        </Link>
                         <button
                           onClick={() => handleDelete(post.id)}
                           className="text-xs text-red-400 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-all"
@@ -173,9 +192,9 @@ export default function Dashboard() {
                         </button>
                       </div>
                     </div>
-                  ))
-                )}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
